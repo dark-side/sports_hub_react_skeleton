@@ -1,46 +1,34 @@
-import News1 from '../img/news1.jpg';
-import News2 from '../img/news3.jpg';
-import News3 from '../img/news4.jpg';
 import { Image } from 'react-bootstrap';
 
-const MostCommented = () => {
+const MostCommented = ({ news }) => {
+    const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
+
     function generateNews() {
-        const news = [
-            {
-                title: 'Lorem Impsum 1',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-                img: News1
-            },
-            {
-                title: 'Lorem Impsum 2',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-                img: News2
-            },
-            {
-                title: 'Lorem Impsum 3',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-                img: News3
-            }
-        ]
-        return news.map((news, index) => {
+        const mostCommented = [...news].sort((a, b) => b.comments_count - a.comments_count).slice(0, 3);
+
+        return mostCommented.map((article, index) => {
             return (
                 <>
                     <div className="news-item">
-                        <Image src={news.img} rounded height='100px' width='120px' />
+                        <Image src={article.image_url} rounded height='100px' width='120px' />
                         <div>
-                            <h2>{news.title}</h2>
-                            <p>{news.text}</p>
+                            <h2>{article.title}</h2>
+                            <p>{article.short_description}</p>
                         </div>
                     </div>
+                    <p>Comments: {article.comments_count}</p>
                 </>
             )
         })
     }
 
     return (
-       <>
-        {generateNews()}
-       </>
+        <>
+            <div class="line-with-text" style={lineWithTextStyle}>
+                <span>Most Commented</span>
+            </div>
+            {generateNews()}
+        </>
     );
-    }
+}
 export default MostCommented;

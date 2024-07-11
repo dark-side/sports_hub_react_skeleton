@@ -1,13 +1,11 @@
 
 import Card from 'react-bootstrap/Card';
-import News1 from '../img/news1.jpg';
-import News2 from '../img/news3.jpg';
-import News3 from '../img/news4.jpg';
-import { useSelector, useDispatch } from 'react-redux';
 
 import { Col, Row, Image } from 'react-bootstrap';
 
 const Breakdown = (params) => {
+    const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
+
     function generateNews() {
         const news = [
             {
@@ -29,19 +27,22 @@ const Breakdown = (params) => {
         return news.map((news, index) => {
             return (
                 <>
-                    <div className="news-item">
+                    <div className="news-item" style={{ marginBottom: '10px', marginTop: '10px' }}>
                         <Image src={news.img} rounded height='100px' width='120px' />
                         <div>
                             <h2>{news.title}</h2>
                             <p>{news.text}</p>
                         </div>
-                    </div>
+                    </div >
                 </>
             )
         })
     }
     return (
         <>
+            <div class="line-with-text" style={lineWithTextStyle}>
+                <span>Breakdown</span>
+            </div>
             <Row>
                 <Col>
                     <Card style={{ width: '20rem' }}>

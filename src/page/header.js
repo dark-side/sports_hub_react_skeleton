@@ -1,40 +1,48 @@
-// React
 import React from 'react';
-// Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Form, FormControl, Button, Dropdown, InputGroup, Col, Row } from 'react-bootstrap';
-// Icons
+import { Form, FormControl, Button, Dropdown, InputGroup, Col, Row } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaSearch, FaGoogle } from 'react-icons/fa';
+
+const colStyle1 = { borderRight: 'solid grey 1px' };
+const formStyle = { flex: 3 };
+const inputStyle = { border: 'none' };
+const colStyle2 = { alignContent: 'space-around', textAlign: 'center', borderRight: 'solid grey 1px' };
+const linkStyle = { marginRight: '10px', color: 'black' };
+const buttonStyle1 = { color: 'red', width: '125px' };
+const colStyle3 = { marginRight: 0, paddingRight: 0, marginTop: '5px' };
+const colStyle4 = { marginLeft: 0, paddingLeft: 0, marginTop: '5px' };
+const buttonStyle2 = { color: 'red', border: 'solid red 1px', width: '125px' };
+const dropdownStyle = { border: 'none', color: 'black', backgroundColor: 'white' };
 
 const Header = () => {
     return (
         <>
-            <Col lg="5" style={{ borderRight: 'solid grey 1px' }}>
-                <Form inline style={{ flex: 3 }}>
+            <Col lg="5" style={colStyle1}>
+                <Form inline style={formStyle}>
                     <InputGroup>
                         <Button variant='outline-link'><FaSearch /></Button>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ border: 'none' }} />
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" style={inputStyle} />
                     </InputGroup>
                 </Form>
             </Col>
 
-            <Col lg="3" style={{ alignContent: 'space-around', textAlign: 'center', borderRight: 'solid grey 1px' }}>
-                <a href="#home" style={{ marginRight: '10px', color: 'black' }}>Share</a>
-                <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaFacebook /></a>
-                <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaTwitter /></a>
-                <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaGoogle /></a>
+            <Col lg="3" style={colStyle2}>
+                <a href="#home" style={linkStyle}>Share</a>
+                <a href="#link" style={linkStyle}><FaFacebook /></a>
+                <a href="#link" style={linkStyle}><FaTwitter /></a>
+                <a href="#link" style={linkStyle}><FaGoogle /></a>
             </Col>
             <Col lg="4">
                 <Row>
-                    <Col style={{ marginRight: 0, paddingRight: 0 }}>
-                        <Button variant="outline-link" style={{ color: 'red', width: '125px' }}>Sign up</Button>
+                    <Col style={colStyle3}>
+                        <Button variant="outline-link" style={buttonStyle1}>Sign up</Button>
                     </Col>
-                    <Col style={{ marginLeft: 0, paddingLeft: 0 }}>
-                        <Button variant="outline-secondary" style={{ color: 'red', border: 'solid red 1px', width: '125px' }}>Log in</Button>
+                    <Col style={colStyle4}>
+                        <Button variant="outline-secondary" style={buttonStyle2}>Log in</Button>
                     </Col>
                     <Col>
                         <Dropdown >
-                            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ border: 'none', color: 'black', backgroundColor: 'white' }}>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownStyle}>
                                 EN
                             </Dropdown.Toggle>
                             <Dropdown.Menu>

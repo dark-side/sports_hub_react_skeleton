@@ -1,12 +1,15 @@
-// React
 import React from 'react';
-// Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Form, FormControl, Button, Dropdown, Container, Row, Col } from 'react-bootstrap';
-// Icons
-import { FaFacebook, FaTwitter, FaSearch, FaGoogle, FaYoutube } from 'react-icons/fa';
+import { Row, Col } from 'react-bootstrap';
+import { FaFacebook, FaTwitter, FaGoogle, FaYoutube } from 'react-icons/fa';
 
 const Sidebar = () => {
+    const headerStyle = { backgroundColor: 'red', textAlign: 'center', color: 'white', height: '50px' };
+    const rowStyle = { textAlign: 'center', left: '15%', position: 'relative', fontSize: 'large', fontFamily: 'monospace', marginTop: '80px' };
+    const colStyle = { textAlign: 'left', marginTop: '50px' };
+    const linkStyle = { marginRight: '10px', color: 'black' };
+    const marginStyle = { margin: '3%' };
+
     function generateLinks() {
         let links = [
             { name: 'Home', href: '#home' },
@@ -27,39 +30,32 @@ const Sidebar = () => {
 
     return (
         <>
-            <div style={{ backgroundColor: 'red', textAlign: 'center', color: 'white', height: '50px' }}>
+            <div style={headerStyle}>
                 X Hub
             </div>
 
-            <Row style={{ textAlign: 'center', left: '15%', position: 'relative', fontSize: 'large', fontFamily: 'monospace', marginTop: '80px' }}>
-                <Col style={{ textAlign: 'left' }}>
+            <Row style={rowStyle}>
+                <Col style={colStyle}>
                     {generateLinks()}
                 </Col>
-                <Row style={{ textAlign: 'left' }}>
+                <Row style={colStyle}>
                     <Col>
-                        <a href="#home" style={{ color: 'black' }}>Follow</a>
+                        <a href="#home" style={linkStyle}>Follow</a>
                     </Col>
-                    <Row style={{ margin: '3%' }}>
+                    <Row style={marginStyle}>
                         <Col>
-                            <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaFacebook /></a>
-                            <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaTwitter /></a>
-
+                            <a href="#link" style={linkStyle}><FaFacebook /></a>
+                            <a href="#link" style={linkStyle}><FaTwitter /></a>
                         </Col>
-
                     </Row>
 
-                    <Row style={{ margin: '3%' }}>
+                    <Row style={marginStyle}>
                         <Col>
-                            <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaGoogle /></a>
-                            <a href="#link" style={{ marginRight: '10px', color: 'black' }}><FaYoutube /></a>
-
+                            <a href="#link" style={linkStyle}><FaGoogle /></a>
+                            <a href="#link" style={linkStyle}><FaYoutube /></a>
                         </Col>
-
                     </Row>
-
-
                 </Row>
-
             </Row>
         </>
     );

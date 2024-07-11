@@ -1,9 +1,5 @@
 import { Col, Row } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
-import News1 from '../img/news1.jpg';
-import News2 from '../img/news2.jpeg';
-import News3 from '../img/news3.jpg';
-import News4 from '../img/news4.jpg';
 
 const News = ({ news }) => {
     function generateNews() {

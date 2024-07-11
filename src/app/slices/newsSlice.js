@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const SERVER_URL = 'http://localhost:3002/articles';
+
 export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
-    const response = await axios.get('http://localhost:3002/articles')
+    const response = await axios.get(SERVER_URL)
     return response.data
 })
 
