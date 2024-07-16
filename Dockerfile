@@ -5,6 +5,8 @@
 
 FROM node:latest
 
+ENV NODE_ENV=development
+
 WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
@@ -14,6 +16,7 @@ RUN yarn install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
+ENV PORT 3000
 
 CMD [ "yarn", "start" ]
