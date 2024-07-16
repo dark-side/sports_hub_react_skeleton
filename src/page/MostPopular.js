@@ -1,4 +1,5 @@
 import { Image } from 'react-bootstrap';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 const MostPopular = ({ news }) => {
     const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
@@ -17,7 +18,10 @@ const MostPopular = ({ news }) => {
                             <p>{article.short_description}</p>
                         </div>
                     </div>
-                    <p>Likes: {article.article_likes}</p>
+                    <p>
+                        <span style={{ marginRight: '20px' }}><FaThumbsUp /> {article.article_likes}</span>
+                        <span><FaThumbsDown />{article.article_dislikes}</span>
+                    </p>
                 </>
             )
         })

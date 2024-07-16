@@ -1,4 +1,5 @@
 import { Image } from 'react-bootstrap';
+import { FaComment } from 'react-icons/fa';
 
 const MostCommented = ({ news }) => {
     const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
@@ -16,7 +17,7 @@ const MostCommented = ({ news }) => {
                             <p>{article.short_description}</p>
                         </div>
                     </div>
-                    <p>Comments: {article.comments_count}</p>
+                    <p><FaComment /> {article.comments_count}</p>
                 </>
             )
         })

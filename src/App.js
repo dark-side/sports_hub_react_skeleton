@@ -1,6 +1,7 @@
 import './App.css';
-import Header from './page/header';
-import Sidebar from './page/sidebar';
+// Pages import
+import Header from './page/Header';
+import Sidebar from './page/Sidebar';
 import Carousel from './page/Carousel';
 import News from './page/News';
 import Breakdown from './page/Breakdown';
@@ -11,9 +12,11 @@ import CompanyInfo from './page/CompanyInfo';
 import Contributors from './page/Contributors';
 import Newsletters from './page/Newsletters';
 import Footer from './page/Footer';
+// Bootstrap import
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Col, Row } from 'react-bootstrap';
+// Redux import
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNews } from './app/slices/newsSlice';
 import { useEffect } from 'react';
@@ -22,6 +25,7 @@ const colStyle = { marginLeft: '0', paddingLeft: '0' };
 const rowStyle = { minHeight: '50px', border: 'solid grey 1px', borderTop: 'none' };
 const marginTopStyle = { marginTop: '50px' };
 const marginBottomStyle = { marginBottom: '50px' };
+const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +56,9 @@ function App() {
           </Row>
 
           <Row style={marginTopStyle}>
+            <div class="line-with-text" style={lineWithTextStyle}>
+              <span>Breakdown</span>
+            </div>
             <Row>
               {allNews.length > 0 ? <Breakdown news={allNews.slice(0, 3)} /> : <p>Loading...</p>}
             </Row>

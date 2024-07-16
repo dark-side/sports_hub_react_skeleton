@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import { Col, Row, Image } from 'react-bootstrap';
 
 const Breakdown = (params) => {
-    const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
 
     function generateNews() {
         const news = [
@@ -40,16 +39,12 @@ const Breakdown = (params) => {
     }
     return (
         <>
-            <div class="line-with-text" style={lineWithTextStyle}>
-                <span>Breakdown</span>
-            </div>
             <Row>
                 <Col>
-                    <Card style={{ width: '20rem' }}>
+                    <Card style={{ width: '30rem' }}>
                         <Card.Img variant="top" src={params.news[0].image_url} />
                         <Card.Body>
                             <Card.Title>{params.news[0].title}</Card.Title>
-
                         </Card.Body>
                     </Card>
 
