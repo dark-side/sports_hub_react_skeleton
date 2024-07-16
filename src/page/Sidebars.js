@@ -26,6 +26,7 @@ const Sidebar = () => {
                 <p>{link.name}</p>
             );
         });
+        
     }
 
     return (

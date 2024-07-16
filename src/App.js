@@ -1,7 +1,7 @@
 import './App.css';
 // Pages import
-import Header from './page/Header';
-import Sidebar from './page/Sidebar';
+import Header from './page/Headers';
+import Sidebar from './page/Sidebars';
 import Carousel from './page/Carousel';
 import News from './page/News';
 import Breakdown from './page/Breakdown';
