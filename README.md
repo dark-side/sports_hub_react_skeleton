@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Sports-Hub Application Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+
+This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a React.js playground. For now, we only have the Ruby on Rails application as a Back-End, but we plan to extend it to other technologies in the future. This application can be started with a `docker compose` using the Ruby on Rails Back-End application mentioned.
+
+The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
+
+## Available Back-End applications
+- [Ruby on Rails](https://github.com/rtriska/ruby_be_genai_plgrnd)
 
 ## Available Scripts
 
@@ -68,3 +75,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License
+
+Licensed under either of
+
+- [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+- [MIT license](http://opensource.org/licenses/MIT)
+
+Just to let you know, at your option.
+
+## Contribution
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in your work, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+
+**Should you have any suggestions, please create an Issue for this repository**
