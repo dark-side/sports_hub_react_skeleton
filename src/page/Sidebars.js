@@ -32,7 +32,7 @@ const Sidebar = () => {
     return (
         <>
             <div style={headerStyle}>
-                X Hub
+                Sports Hub
             </div>
 
             <Row style={rowStyle}>
