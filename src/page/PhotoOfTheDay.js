@@ -1,5 +1,7 @@
 import Image from 'react-bootstrap/Image';
 
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
 const PhotoOfTheDay = ({ news }) => {
     const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
     const imageContainerStyle = { position: 'relative', display: 'inline-block' };
@@ -13,7 +15,7 @@ const PhotoOfTheDay = ({ news }) => {
                 <span>Photo of the Day</span>
             </div>
             <div style={imageContainerStyle}>
-                <Image src={news.image_url} fluid style={imageStyle} />
+                <Image src={`${ASSETS_URL}/${news.image_url}`} fluid style={imageStyle} />
                 <div style={captionStyle}>
                     <h2 style={textStyle}>{news.title}</h2>
                     <p style={textStyle}>{news.short_description}</p>
@@ -23,4 +25,4 @@ const PhotoOfTheDay = ({ news }) => {
     );
 }
 
-export default PhotoOfTheDay;   
+export default PhotoOfTheDay;

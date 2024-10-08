@@ -1,6 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
 const CustomCarousel = ({ news }) => {
     const responsive = {
         superLargeDesktop: {
@@ -25,7 +27,7 @@ const CustomCarousel = ({ news }) => {
     return (
         <Carousel responsive={responsive} showDots={true}>
             {news.map((item, index) => (
-                <div key={index}><img style={{ maxHeight: "620px" }} src={item.image_url} /></div>
+                <div key={index}><img style={{ maxHeight: "620px" }} src={`${ASSETS_URL}/${item.image_url}`} /></div>
             ))}
         </Carousel>
     );
