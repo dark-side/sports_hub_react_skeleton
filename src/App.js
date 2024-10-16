@@ -1,4 +1,11 @@
+// Bootstrap import
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Row } from 'react-bootstrap';
+
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 // Pages import
 import Header from './page/Headers';
 import Sidebar from './page/Sidebars';
@@ -12,14 +19,9 @@ import CompanyInfo from './page/CompanyInfo';
 import Contributors from './page/Contributors';
 import Newsletters from './page/Newsletters';
 import Footer from './page/Footer';
-// Bootstrap import
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { Col, Row } from 'react-bootstrap';
+
 // Redux import
-import { useSelector, useDispatch } from 'react-redux';
 import { fetchNews } from './app/slices/newsSlice';
-import { useEffect } from 'react';
 
 const colStyle = { marginLeft: '0', paddingLeft: '0' };
 const rowStyle = { minHeight: '50px', border: 'solid grey 1px', borderTop: 'none' };
@@ -46,22 +48,16 @@ function App() {
             <Header />
           </Row>
           <Row style={marginTopStyle}>
-            <Col lg='8'>
-              {allNews.length > 0 ? <Carousel news={allNews} /> : <p>Loading...</p>}
-            </Col>
+            <Col lg="8">{allNews.length > 0 ? <Carousel news={allNews} /> : <p>Loading...</p>}</Col>
           </Row>
 
-          <Row style={marginTopStyle}>
-            {allNews.length > 0 ? <News news={allNews} /> : <p>Loading...</p>}
-          </Row>
+          <Row style={marginTopStyle}>{allNews.length > 0 ? <News news={allNews} /> : <p>Loading...</p>}</Row>
 
           <Row style={marginTopStyle}>
-            <div class="line-with-text" style={lineWithTextStyle}>
+            <div className="line-with-text" style={lineWithTextStyle}>
               <span>Breakdown</span>
             </div>
-            <Row>
-              {allNews.length > 0 ? <Breakdown news={allNews.slice(0, 3)} /> : <p>Loading...</p>}
-            </Row>
+            <Row>{allNews.length > 0 ? <Breakdown news={allNews.slice(0, 3)} /> : <p>Loading...</p>}</Row>
 
             <Row style={marginTopStyle}>
               {allNews.length > 0 ? <Breakdown news={allNews.slice(2, 5)} /> : <p>Loading...</p>}
@@ -93,7 +89,6 @@ function App() {
               <Newsletters />
             </Col>
           </Row>
-
         </Col>
       </Row>
       <Footer />

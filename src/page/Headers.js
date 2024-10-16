@@ -15,49 +15,61 @@ const buttonStyle2 = { color: 'red', border: 'solid red 1px', width: '125px' };
 const dropdownStyle = { border: 'none', color: 'black', backgroundColor: 'white' };
 
 const Header = () => {
-    return (
-        <>
-            <Col lg="5" style={colStyle1}>
-                <Form inline style={formStyle}>
-                    <InputGroup>
-                        <Button variant='outline-link'><FaSearch /></Button>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" style={inputStyle} />
-                    </InputGroup>
-                </Form>
-            </Col>
+  return (
+    <>
+      <Col lg="5" style={colStyle1}>
+        <Form inline style={formStyle}>
+          <InputGroup>
+            <Button variant="outline-link">
+              <FaSearch />
+            </Button>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" style={inputStyle} />
+          </InputGroup>
+        </Form>
+      </Col>
 
-            <Col lg="3" style={colStyle2}>
-                <a href="#home" style={linkStyle}>Share</a>
-                <a href="#link" style={linkStyle}><FaFacebook /></a>
-                <a href="#link" style={linkStyle}><FaTwitter /></a>
-                <a href="#link" style={linkStyle}><FaGoogle /></a>
-            </Col>
-            <Col lg="4">
-                <Row>
-                    <Col style={colStyle3}>
-                        <Button variant="outline-link" style={buttonStyle1}>Sign up</Button>
-                    </Col>
-                    <Col style={colStyle4}>
-                        <Button variant="outline-secondary" style={buttonStyle2}>Log in</Button>
-                    </Col>
-                    <Col>
-                        <Dropdown >
-                            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownStyle}>
-                                EN
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">en</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">ua</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">fr</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </Col>
-
-                </Row>
-            </Col>
-
-        </>
-    );
-}
+      <Col lg="3" style={colStyle2}>
+        <a href="#home" style={linkStyle}>
+          Share
+        </a>
+        <a href="#link" style={linkStyle}>
+          <FaFacebook />
+        </a>
+        <a href="#link" style={linkStyle}>
+          <FaTwitter />
+        </a>
+        <a href="#link" style={linkStyle}>
+          <FaGoogle />
+        </a>
+      </Col>
+      <Col lg="4">
+        <Row>
+          <Col style={colStyle3}>
+            <Button variant="outline-link" style={buttonStyle1}>
+              Sign up
+            </Button>
+          </Col>
+          <Col style={colStyle4}>
+            <Button variant="outline-secondary" style={buttonStyle2}>
+              Log in
+            </Button>
+          </Col>
+          <Col>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownStyle}>
+                EN
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">en</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">ua</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">fr</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+        </Row>
+      </Col>
+    </>
+  );
+};
 
 export default Header;
