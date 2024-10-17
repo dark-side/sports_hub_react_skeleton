@@ -1,8 +1,7 @@
 import Card from 'react-bootstrap/Card';
 
 import { Col, Row, Image } from 'react-bootstrap';
-
-const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+import { getImageUrl } from '../utils';
 
 const Breakdown = (params) => {
   function generateNews() {
@@ -10,17 +9,17 @@ const Breakdown = (params) => {
       {
         title: params.news[0].title,
         text: params.news[0].short_description,
-        img: `${ASSETS_URL}/${params.news[0].image_url}`,
+        img: getImageUrl(params.news[0].image_url),
       },
       {
         title: params.news[1].title,
         text: params.news[1].short_description,
-        img: `${ASSETS_URL}/${params.news[1].image_url}`,
+        img: getImageUrl(params.news[1].image_url),
       },
       {
         title: params.news[2].title,
         text: params.news[2].short_description,
-        img: `${ASSETS_URL}/${params.news[2].image_url}`,
+        img: getImageUrl(params.news[2].image_url),
       },
     ];
     return news.map((news, index) => {
@@ -42,7 +41,7 @@ const Breakdown = (params) => {
       <Row>
         <Col>
           <Card style={{ width: '30rem' }}>
-            <Card.Img variant="top" src={`${ASSETS_URL}/${params.news[0].image_url}`} />
+            <Card.Img variant="top" src={getImageUrl(params.news[0].image_url)} />
             <Card.Body>
               <Card.Title>{params.news[0].title}</Card.Title>
             </Card.Body>

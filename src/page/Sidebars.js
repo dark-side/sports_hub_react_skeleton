@@ -2,9 +2,20 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaGoogle, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+import './Sidebar.css';
 
 const Sidebar = () => {
-  const headerStyle = { backgroundColor: 'red', textAlign: 'center', color: 'white', height: '50px' };
+  const headerStyle = {
+    backgroundColor: 'red',
+    textAlign: 'center',
+    color: 'white',
+    height: '50px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
   const rowStyle = {
     textAlign: 'center',
     left: '15%',
@@ -19,7 +30,7 @@ const Sidebar = () => {
 
   function generateLinks() {
     let links = [
-      { name: 'Home', href: '#home' },
+      { name: 'Home', href: '/' },
       { name: 'Football', href: '#football' },
       { name: 'Basketball', href: '#basketball' },
       { name: 'Tennis', href: '#tennis' },
@@ -29,7 +40,11 @@ const Sidebar = () => {
     ];
 
     return links.map((link, index) => {
-      return <p>{link.name}</p>;
+      return (
+        <Link key={index} to={link.href} className="sidebar-link">
+          {link.name}
+        </Link>
+      );
     });
   }
 

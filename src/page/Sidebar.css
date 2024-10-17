@@ -1,0 +1,9 @@
+.sidebar-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-link:hover {
+  color: blue; /* Change this to your desired hover color */
+}

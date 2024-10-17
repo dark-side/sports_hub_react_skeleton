@@ -1,0 +1,124 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "Local Team Wins Championship",
+      "short_description": "The local football team secured a thrilling victory in the finals.",
+      "content": "In a dramatic finish, the local team emerged victorious in the championship, defeating their rivals 3-2 after a nail-biting penalty shootout.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 120,
+      "article_dislikes": 5,
+      "author": "John Doe",
+      "published_date": "2024-10-17",
+      "tags": ["sports", "football", "championship"]
+    },
+    {
+      "id": "2",
+      "title": "Marathon Runner Breaks Record",
+      "short_description": "An inspiring story of a runner breaking the national marathon record.",
+      "content": "Jane Smith broke the national marathon record with a time of 2 hours and 15 minutes, setting a new benchmark for athletes across the country.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 200,
+      "article_dislikes": 12,
+      "author": "Alex Green",
+      "published_date": "2024-10-16",
+      "tags": ["sports", "marathon", "record"]
+    },
+    {
+      "id": "3",
+      "title": "Basketball Star Announces Retirement",
+      "short_description": "A legendary basketball player announces retirement after a stellar career.",
+      "content": "After two decades of dominating the court, basketball legend Michael Johnson has announced his retirement, ending an illustrious career with multiple championships.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 300,
+      "article_dislikes": 15,
+      "author": "Emily Blue",
+      "published_date": "2024-10-15",
+      "tags": ["sports", "basketball", "retirement"]
+    },
+    {
+      "id": "4",
+      "title": "New Soccer Stadium Opens",
+      "short_description": "A state-of-the-art soccer stadium has just opened in the city.",
+      "content": "The newly constructed stadium boasts modern amenities, a seating capacity of 50,000, and a retractable roof, making it one of the most advanced stadiums in the world.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 450,
+      "article_dislikes": 30,
+      "author": "Sarah White",
+      "published_date": "2024-10-14",
+      "tags": ["sports", "soccer", "stadium"]
+    },
+    {
+      "id": "5",
+      "title": "Tennis Champion Wins Grand Slam",
+      "short_description": "A young tennis prodigy wins their first Grand Slam title.",
+      "content": "19-year-old tennis sensation Sarah Collins claimed her first Grand Slam title, defeating the world’s number one in straight sets.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 320,
+      "article_dislikes": 8,
+      "author": "James Clark",
+      "published_date": "2024-10-13",
+      "tags": ["sports", "tennis", "grand slam"]
+    },
+    {
+      "id": "6",
+      "title": "Cyclist Completes Epic Tour",
+      "short_description": "A cyclist completed a 3,000-mile journey across the country.",
+      "content": "In an extraordinary feat of endurance, cyclist Martin Gomez finished a 3,000-mile cross-country tour, raising funds for charity in the process.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 210,
+      "article_dislikes": 7,
+      "author": "Katie Brown",
+      "published_date": "2024-10-12",
+      "tags": ["sports", "cycling", "tour"]
+    },
+    {
+      "id": "7",
+      "title": "Golf Tournament Surprise Winner",
+      "short_description": "An underdog golfer claimed victory in a prestigious tournament.",
+      "content": "In one of the biggest upsets in golf history, an unseeded player won the prestigious Masters tournament, stunning fans and experts alike.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 180,
+      "article_dislikes": 10,
+      "author": "George Red",
+      "published_date": "2024-10-11",
+      "tags": ["sports", "golf", "tournament"]
+    },
+    {
+      "id": "8",
+      "title": "Boxer Defends Title in Knockout",
+      "short_description": "The world champion boxer successfully defended their title with a knockout in the third round.",
+      "content": "World heavyweight champion Liam Jones defended his title with a powerful knockout punch in the third round, extending his unbeaten record to 25-0.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 500,
+      "article_dislikes": 20,
+      "author": "David Silver",
+      "published_date": "2024-10-10",
+      "tags": ["sports", "boxing", "championship"]
+    },
+    {
+      "id": "9",
+      "title": "Cricket Series Ends in Tie",
+      "short_description": "A thrilling cricket series between two nations ends in a tie.",
+      "content": "In an intense five-match series, the final match ended in a draw, leaving both teams sharing the trophy after weeks of thrilling competition.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 170,
+      "article_dislikes": 9,
+      "author": "Anna Brown",
+      "published_date": "2024-10-09",
+      "tags": ["sports", "cricket", "series"]
+    },
+    {
+      "id": "10",
+      "title": "Olympic Games 2024 Highlights",
+      "short_description": "Key moments from the 2024 Olympic Games, including new world records.",
+      "content": "The 2024 Olympic Games saw several world records broken, with athletes from various countries showcasing incredible performances across multiple disciplines.",
+      "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB...",
+      "article_likes": 1000,
+      "article_dislikes": 45,
+      "author": "Michael Green",
+      "published_date": "2024-10-08",
+      "tags": ["sports", "Olympics", "records"]
+    }
+  ]
+}

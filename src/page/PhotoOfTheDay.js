@@ -1,6 +1,6 @@
 import Image from 'react-bootstrap/Image';
 
-const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+import { getImageUrl } from '../utils';
 
 const PhotoOfTheDay = ({ news }) => {
   const lineWithTextStyle = { marginTop: '50px', marginBottom: '50px' };
@@ -15,7 +15,7 @@ const PhotoOfTheDay = ({ news }) => {
         <span>Photo of the Day</span>
       </div>
       <div style={imageContainerStyle}>
-        <Image src={`${ASSETS_URL}/${news.image_url}`} fluid style={imageStyle} />
+        <Image src={getImageUrl(news.image_url)} fluid style={imageStyle} />
         <div style={captionStyle}>
           <h2 style={textStyle}>{news.title}</h2>
           <p style={textStyle}>{news.short_description}</p>
