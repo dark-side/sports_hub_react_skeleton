@@ -5,7 +5,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import { getImageUrl } from '../utils';
 
-const SingleNews = () => {
+const NewsArticle = () => {
   const { id } = useParams();
 
   const newsItem = useSelector((state) => state.news.news.find((item) => Number(item.id) === Number(id)));
@@ -32,4 +32,4 @@ const SingleNews = () => {
   );
 };
 
-export default SingleNews;
+export default NewsArticle;

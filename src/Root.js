@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import App from './App';
 import Header from './page/Headers';
-import SingleNews from './page/SingleNews';
+import NewsArticle from './page/NewsArticle';
 import Footer from './page/Footer';
 import Sidebar from './page/Sidebars';
 
@@ -17,7 +17,7 @@ function Root() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
-          <Route path="/news/:id" element={<SingleNews />} />
+          <Route path="/news/:id" element={<NewsArticle />} />
         </Route>
       </Routes>
     </Router>
