@@ -8,7 +8,7 @@ const MostCommented = ({ news }) => {
   function generateNews() {
     const mostCommented = [...news].sort((a, b) => b.comments_count - a.comments_count).slice(0, 3);
 
-    return mostCommented.map((article, index) => {
+    return mostCommented.map((article) => {
       return (
         <>
           <div className="news-item">

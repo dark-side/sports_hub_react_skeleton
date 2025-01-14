@@ -9,7 +9,7 @@ const MostPopular = ({ news }) => {
   function generateNews() {
     const mostPopular = [...news].sort((a, b) => b.article_likes - a.article_likes).slice(0, 3);
 
-    return mostPopular.map((article, index) => {
+    return mostPopular.map((article) => {
       return (
         <>
           <div className="news-item">

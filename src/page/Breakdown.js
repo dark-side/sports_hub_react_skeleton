@@ -24,15 +24,13 @@ const Breakdown = (params) => {
     ];
     return news.map((news, index) => {
       return (
-        <>
-          <div className="news-item" style={{ marginBottom: '10px', marginTop: '10px' }}>
-            <Image src={news.img} rounded height="100px" width="120px" />
-            <div>
-              <h2>{news.title}</h2>
-              <p>{news.text}</p>
-            </div>
+        <div key={index} className="news-item" style={{ marginBottom: '10px', marginTop: '10px' }}>
+          <Image src={news.img} rounded height="100px" width="120px" />
+          <div>
+            <h2>{news.title}</h2>
+            <p>{news.text}</p>
           </div>
-        </>
+        </div>
       );
     });
   }
