@@ -30,6 +30,9 @@ const Layout = () => {
             '& .MuiDrawer-paper': {
               width: '240px',
               backgroundColor: 'white',
+              top: 'inherit',
+              alignitems: 'center',
+              position: 'absolute'
             },
           }}
         >

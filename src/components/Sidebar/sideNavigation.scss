@@ -1,6 +1,6 @@
 
 :root {
-    --text-gray: #6c757d; /* Example gray color, adjust as needed */
+    --text-gray: #6c757d;
   }
   
   .sidebar {
@@ -39,8 +39,9 @@
     height: 20px;
   }
 
- .container div div {
+  .MuiDrawer-paper {
     top: inherit;
     align-items: center;
+    position: absolute;
  } 
   
