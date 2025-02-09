@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './footer.scss';
+import Brand from '../common/Brand'
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -47,6 +48,7 @@ const Footer = () => {
     </div>
 
     <div className="bottom">
+      <Brand></Brand>
       <div className="copyright">
         <div>Copyright © {new Date().getFullYear()} Sports Hub</div>
         <div>

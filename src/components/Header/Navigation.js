@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, Facebook, Twitter, Google } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import './navigation.scss';
-import Brand from './Brand';
+import Brand from '../common/Brand';
 
 const Header = () => {
   const [lang, setLang] = useState('en');
