@@ -1,11 +1,8 @@
-// Bootstrap import
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 
 import { useSelector } from 'react-redux';
 
-// Pages import
 import Carousel from './page/Carousel';
 import News from './page/News';
 import Breakdown from './page/Breakdown';

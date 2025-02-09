@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = () => {
-  const headerStyle = {
-    backgroundColor: 'red',
-    textAlign: 'center',
-    color: 'white',
-    height: '50px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
+  // const headerStyle = {
+  //   backgroundColor: 'red',
+  //   textAlign: 'center',
+  //   color: 'white',
+  //   height: '50px',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // };
   const rowStyle = {
     textAlign: 'center',
     left: '15%',
@@ -50,7 +50,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div style={headerStyle}>Sports Hub</div>
+      {/* <div style={headerStyle}>Sports Hub</div> */}
 
       <Row style={rowStyle}>
         <Col style={colStyle}>{generateLinks()}</Col>
