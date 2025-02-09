@@ -15,13 +15,16 @@ const News = ({ articles, popular, commented, side }) => {
   const allNews = useSelector((state) => state.news.news);
 
   const mostCommented = allNews.slice(0, 3);
-  const popularArticle = allNews.slice(3, 5);
+  const popularArticle = allNews.slice(2, 5);
 //   debugger
   return (
     <div style={{ display: 'flex', height: '100%', flex: 1, alignItems: 'normal' }}>
       <div className="content" style={{ width: '815px', height: '100%', marginBottom: '80px' }}>
+        <Article article={allNews[1]}></Article>
         <div className="main" style={{ width: '100%', marginBottom: '120px' }}>
-          <Article article={allNews[1]}></Article>
+          {allNews.map((article, index) => (
+            <Card key={index} article={article} />
+          ))}
         </div>
 
         <div className="bottom" style={{ display: 'flex', width: '100%', backgroundColor: 'white' }}>
