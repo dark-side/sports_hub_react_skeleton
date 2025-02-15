@@ -1,35 +1,92 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import Card from './Card';
 import Divider from './Divider';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNews } from '../../app/slices/newsSlice';
 import Article from './Article';
 
+const Container = styled.div`
+  display: flex;
+  height: 100%;
+  flex: 1;
+  align-items: normal;
+`;
+
+const Content = styled.div`
+  width: 815px;
+  height: 100%;
+  margin-bottom: 80px;
+`;
+
+const Main = styled.div`
+  width: 100%;
+  margin-bottom: 120px;
+`;
+
+const Bottom = styled.div`
+  display: flex;
+  width: 100%;
+  background-color: white;
+`;
+
+const Left = styled.div`
+  height: 100%;
+  flex-grow: 1;
+  margin-right: 20px;
+`;
+
+const Right = styled.div`
+  height: 100%;
+  flex-grow: 1;
+`;
+
+const Side = styled.div`
+  width: calc(100% - 815px);
+  position: relative;
+`;
+
+const Cards = styled.div`
+  width: 285px;
+  margin-top: 650px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+`;
+
+const Watermark = styled.div`
+  position: absolute;
+  left: 60px;
+  top: 360px;
+  opacity: 0.1;
+  font-size: 100px;
+  transform: rotate(-45deg);
+  pointer-events: none;
+`;
+
 const News = ({ articles, popular, commented, side }) => {
-    const dispatch = useDispatch();
-  
-    useEffect(() => {
-      dispatch(fetchNews());
-    }, [dispatch]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchNews());
+  }, [dispatch]);
 
   const allNews = useSelector((state) => state.news.news);
 
   const mostCommented = allNews.slice(0, 3);
   const popularArticle = allNews.slice(2, 5);
-//   debugger
+
   return (
-    <div style={{ display: 'flex', height: '100%', flex: 1, alignItems: 'normal' }}>
-      <div className="content" style={{ width: '815px', height: '100%', marginBottom: '80px' }}>
+    <Container>
+      <Content>
         <Article article={allNews[1]}></Article>
-        <div className="main" style={{ width: '100%', marginBottom: '120px' }}>
+        <Main>
           {allNews.map((article, index) => (
             <Card key={index} article={article} />
           ))}
-        </div>
+        </Main>
 
-        <div className="bottom" style={{ display: 'flex', width: '100%', backgroundColor: 'white' }}>
-          <div className="left" style={{ height: '100%', flexGrow: 1, marginRight: '20px' }}>
-            {/* Popular Articles */}
+        <Bottom>
+          <Left>
             {mostCommented.length > 0 && (
               <>
                 <Divider title="MOST POPULAR" />
@@ -38,10 +95,9 @@ const News = ({ articles, popular, commented, side }) => {
                 ))}
               </>
             )}
-          </div>
+          </Left>
 
-          <div className="right" style={{ height: '100%', flexGrow: 1 }}>
-            {/* Most Commented Articles */}
+          <Right>
             {popularArticle.length > 0 && (
               <>
                 <Divider title="MOST COMMENTED" />
@@ -50,23 +106,19 @@ const News = ({ articles, popular, commented, side }) => {
                 ))}
               </>
             )}
-          </div>
-        </div>
-      </div>
+          </Right>
+        </Bottom>
+      </Content>
 
-      <div className="side" style={{ width: 'calc(100% - 815px)', position: 'relative' }}>
-        <div className="cards" style={{ width: '285px', marginTop: '750px', marginLeft: '20px', marginBottom: '20px' }}>
+      <Side>
+        <Cards>
           {allNews.map((article, index) => (
             <Card key={index} article={article} />
           ))}
-        </div>
-
-        <div className="watermark-2" style={{ left: '60px', top: '360px' }}>
-          {/* Watermark text */}
-          NEWS
-        </div>
-      </div>
-    </div>
+        </Cards>
+        <Watermark>NEWS</Watermark>
+      </Side>
+    </Container>
   );
 };
 
