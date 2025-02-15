@@ -64,6 +64,7 @@ const Bottom = styled.div`
   justify-content: space-between;
   width: 100%;
   background-color: var(--primary-red);
+  height: 5rem;
 `;
 
 const Copyright = styled.div`
@@ -112,7 +113,7 @@ const Footer = () => {
 
         <Section>
           <Title>NEWSLETTER</Title>
-          <div>Sign up to receive the latest sports news</div>
+          <div style={{ marginBottom: '5px'}}>Sign up to receive the latest sports news</div>
           <Email>
             <EmailInput
               type="email"

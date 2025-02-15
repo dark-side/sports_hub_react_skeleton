@@ -21,6 +21,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  .MuiDrawer-paper {
+    align-items: center;
+  }
 `;
 
 const BreadcrumbsContainer = styled.div`
@@ -49,10 +53,14 @@ const BreadcrumbsContainer = styled.div`
 `;
 
 const Watermark = styled.div`
-  left: 290px;
-  top: 160px;
+  left: 12%;
+  top: 15%;
   z-index: 25;
   position: absolute;
+  opacity: 0.2;
+  font-size: 5rem;
+  color: gray;
+  transform: rotate(90deg);
 `;
 
 const Layout = () => {
@@ -77,15 +85,15 @@ const Layout = () => {
                 width: '240px',
                 backgroundColor: 'white',
                 top: 'inherit',
+                position: 'absolute',
                 alignitems: 'center',
-                position: 'absolute'
               },
             }}
           >
             <SideNavigation />
           </Drawer>
 
-          <div style={{ marginLeft: '240px', padding: '16px', flex: 1 }}>
+          <div style={{ marginLeft: '240px', padding: '16px', flex: 1, borderBottom: 'solid' }}>
             <BreadcrumbsContainer>
               <Breadcrumbs aria-label="breadcrumb">
                 <Link href="/nfl">NFL</Link>
@@ -105,7 +113,7 @@ const Layout = () => {
           </div>
         </Container>
         <Footer />
-        <Watermark className="watermark-1">ALL</Watermark>
+        <Watermark>ALL</Watermark>
       </LayoutContainer>
     </>
   );

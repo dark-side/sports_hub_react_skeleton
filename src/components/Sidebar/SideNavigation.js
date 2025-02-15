@@ -1,6 +1,54 @@
 import React from 'react';
 import { Facebook, Twitter, Google, YouTube } from '@mui/icons-material';
-import './sideNavigation.scss';
+import styled from 'styled-components';
+
+const SidebarContainer = styled.div`
+  display: block;
+`;
+
+const NavigationContainer = styled.div`
+  margin: 4rem 0;
+`;
+
+const FollowContainer = styled.div`
+  width: 76px;
+  height: 92px;
+`;
+
+const FollowTitle = styled.div`
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+`;
+
+const FollowGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const FollowLink = styled.a`
+  margin-bottom: 15px;
+`;
+
+const NavigationList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const NavigationItem = styled.li`
+  cursor: pointer;
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  font-weight: bold;
+`;
+
+const NavigationLink = styled.a`
+  text-transform: uppercase;
+`;
 
 const SIDEBAR_ITEMS = [
     'HOME',
@@ -21,48 +69,48 @@ const SIDEBAR_ITEMS = [
 
 const Navigation = ({ menuItems }) => {
   return (
-    <div className="navigation">
-      <ul className="flex flex-col gap-4">
+    <NavigationContainer>
+      <NavigationList>
         {SIDEBAR_ITEMS.map((navLink, index) => (
-          <li key={index} className="cursor-pointer text-[var(--text-gray)] text-sm font-bold">
-            <a href={`/${navLink.toLowerCase()}`} className="uppercase">
+          <NavigationItem key={index}>
+            <NavigationLink href={`/${navLink.toLowerCase()}`}>
               {navLink}
-            </a>
-          </li>
+            </NavigationLink>
+          </NavigationItem>
         ))}
-      </ul>
-    </div>
+      </NavigationList>
+    </NavigationContainer>
   );
 };
 
 const Follow = () => {
   return (
-    <div className="follow">
-      <div className="title">Follow</div>
-      <div className="grid">
-        <a href="https://www.facebook.com" aria-label="Follow us on Facebook">
+    <FollowContainer>
+      <FollowTitle>Follow</FollowTitle>
+      <FollowGrid>
+        <FollowLink href="https://www.facebook.com" aria-label="Follow us on Facebook">
           <Facebook fontSize="large" />
-        </a>
-        <a href="https://www.twitter.com" aria-label="Follow us on Twitter">
+        </FollowLink>
+        <FollowLink href="https://www.twitter.com" aria-label="Follow us on Twitter">
           <Twitter fontSize="large" />
-        </a>
-        <a href="https://www.google.com" aria-label="Follow us on Google">
+        </FollowLink>
+        <FollowLink href="https://www.google.com" aria-label="Follow us on Google">
           <Google fontSize="large" />
-        </a>
-        <a href="https://www.youtube.com" aria-label="Follow us on YouTube">
+        </FollowLink>
+        <FollowLink href="https://www.youtube.com" aria-label="Follow us on YouTube">
           <YouTube fontSize="large" />
-        </a>
-      </div>
-    </div>
+        </FollowLink>
+      </FollowGrid>
+    </FollowContainer>
   );
 };
 
 const Sidebar = ({ menuItems }) => {
   return (
-    <div className="sidebar">
+    <SidebarContainer>
       <Navigation menuItems={menuItems} />
       <Follow />
-    </div>
+    </SidebarContainer>
   );
 };
 
