@@ -5,6 +5,7 @@ import Divider from './Divider';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNews } from '../../app/slices/newsSlice';
 import Article from './Article';
+import SideCard from './SideCard';
 
 const Container = styled.div`
   display: flex;
@@ -91,7 +92,7 @@ const News = ({ articles, popular, commented, side }) => {
               <>
                 <Divider title="MOST POPULAR" />
                 {mostCommented.map((article, index) => (
-                  <Card key={index} article={article} className="mini" />
+                  <Card mini={true} key={index} article={article} className="mini" />
                 ))}
               </>
             )}
@@ -102,7 +103,7 @@ const News = ({ articles, popular, commented, side }) => {
               <>
                 <Divider title="MOST COMMENTED" />
                 {popularArticle.map((article, index) => (
-                  <Card key={index} article={article} className="mini" />
+                  <Card mini={true} key={index} article={article} className="mini" />
                 ))}
               </>
             )}
@@ -112,8 +113,8 @@ const News = ({ articles, popular, commented, side }) => {
 
       <Side>
         <Cards>
-          {allNews.map((article, index) => (
-            <Card key={index} article={article} />
+          {popularArticle.map((article, index) => (
+            <SideCard key={index} article={article} />
           ))}
         </Cards>
         <Watermark>NEWS</Watermark>

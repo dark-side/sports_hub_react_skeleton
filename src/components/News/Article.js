@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Share as ShareIcon } from '@mui/icons-material'; // Material UI icon import
+import { Share as ShareIcon } from '@mui/icons-material';
 import styled from 'styled-components';
 
 const ArticleContainer = styled.div`
