@@ -133,13 +133,13 @@ const Header = () => {
       <SocialContainer>
         <div className="share">Share</div>
         <Link to="share-facebook" aria-label="Share with Facebook">
-          <Facebook fontSize="large" />
+          <Facebook />
         </Link>
         <Link to="share-twitter" aria-label="Share with Twitter">
-          <Twitter fontSize="large" />
+          <Twitter />
         </Link>
         <Link to="share-google" aria-label="Share with Gmail">
-          <Google fontSize="large" />
+          <Google />
         </Link>
       </SocialContainer>
 

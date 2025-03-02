@@ -28,9 +28,9 @@ const Login = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [isLogin, setIsLogin] = useState(window.location.pathname.includes('log-in'));
   const [isFormValid, setIsFormValid] = useState(false);
-  const history = useNavigate();
+  const navigate = useNavigate();
+  const isLogin = window.location.pathname.includes('log-in');
 
   useEffect(() => {
     const isValid = validateForm();
@@ -42,45 +42,51 @@ const Login = () => {
 
     setEmail(value);
     if (!validateEmail(value)) {
-        setEmailError('Please enter a valid email address.');
-      } else {
-        setEmailError('');
-      }
+      setEmailError('Please enter a valid email address.');
+    } else {
+      setEmailError('');
+    }
   }
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
-
+  
     setPassword(value);
-    if (value!== confirmPassword) {
-        setPasswordError('Passwords do not match.');
-      } else {
-        setPasswordError('');
-        }
+    if (!validatePassword(value)) {
+      setPasswordError('Password must be at least 8 characters long and contain numbers.');
+    } else if (value !== confirmPassword) {
+      setPasswordError('Passwords do not match.');
+    } else {
+      setPasswordError('');
     }
+  }
 
-   const handleConfirmPasswordChange = (e) => {
+  const handleConfirmPasswordChange = (e) => {
     const value = e.target.value;
 
     setConfirmPassword(value);
     if (password !== value) {
-        setPasswordError('Passwords do not match.');
-      }
-    else {
-        setPasswordError('');
-      }
+      setPasswordError('Passwords do not match.');
+    } else {
+      setPasswordError('');
     }
+  }
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
+  const validatePassword = (password) => {
+    const re = /^(?=.*\d).{8,}$/;
+    return re.test(password);
+  };
+
   const validateForm = () => {
     if (!validateEmail(email)) {
       return false;
     }
-    if (password === '') {
+    if (!validatePassword(password)) {
       return false;
     }
     if (!isLogin && password !== confirmPassword) {
@@ -105,13 +111,13 @@ const Login = () => {
 
   const logIn = () => {
     axios.post(`${process.env.REACT_APP_API_URL}/api/auth/sign_in`, {
-        user: {    
-      email: email,
-      password: password
-    }
+      user: {    
+        email: email,
+        password: password
+      }
     }).then(response => {
       console.log('***********************login***************', response);
-    //   history.push('/');
+      navigate('/');
     });
   };
 
@@ -124,7 +130,7 @@ const Login = () => {
       }
     }).then(response => {
       console.log('***********************signup***************', response);
-      // history.push('/');
+      navigate('/log-in');
     }).catch(error => {
       if (error.response) {
         console.error('Error response:', error.response.data);

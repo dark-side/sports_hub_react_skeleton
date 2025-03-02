@@ -1,13 +1,14 @@
 import React from 'react';
 import { SocialContainer } from '../styled/LoginStyles';
+import { Facebook, Google } from '@mui/icons-material';
 
 const SocialLoginButtons = () => (
   <SocialContainer>
     <a href="/facebook">
-      <i className="fab fa-facebook"></i>
+      <Facebook />
     </a>
     <a href="/gmail">
-      <i className="fab fa-google"></i>
+      <Google />
     </a>
   </SocialContainer>
 );
