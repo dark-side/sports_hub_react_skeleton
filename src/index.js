@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NewLayout from './Layout'
 import News from './components/News/News';
+import Login from './components/LogIn/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,8 @@ root.render(
           <Route index element={<News />} />
           <Route path="feed" element={<News></News>} ></Route>
         </Route>
+        <Route path="/log-in" element={<Login />} />
+        <Route path="/sign-up" element={<Login />} />
       </Routes>
     </Router>
     </Provider>

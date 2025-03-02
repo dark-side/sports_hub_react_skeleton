@@ -17,7 +17,7 @@ const ArticleCardWrapper = styled(Link)`
 `;
 
 const ArticleImage = styled.img`
-  width: 285px;
+  width: 240px;
   height: 160px;
   margin-right: 20px;
 `;
@@ -54,7 +54,7 @@ const MiniArticleCardWrapper = styled(ArticleCardWrapper)`
 `;
 
 const MiniArticleImage = styled(ArticleImage)`
-  width: 178px;
+  width: 140px;
   height: 97px;
   margin-right: 15px;
 `;

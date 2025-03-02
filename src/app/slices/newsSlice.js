@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import mockedData from './mockedData.json';
 
-const ARTICLES_URL = `${process.env.REACT_APP_API_URL}/articles`;
+const ARTICLES_URL = `${process.env.REACT_APP_API_URL}/api/articles`;
 
 export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
   try {

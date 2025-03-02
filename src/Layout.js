@@ -93,7 +93,7 @@ const Layout = () => {
             <SideNavigation />
           </Drawer>
 
-          <div style={{ marginLeft: '240px', padding: '16px', flex: 1, borderBottom: 'solid' }}>
+          <div style={{ marginLeft: '280px', padding: '16px', flex: 1, borderBottom: 'solid' }}>
             <BreadcrumbsContainer>
               <Breadcrumbs aria-label="breadcrumb">
                 <Link href="/nfl">NFL</Link>
