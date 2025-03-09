@@ -18,15 +18,29 @@ export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
   }
 });
 
+export const getArticle = createAsyncThunk('news/getArticle', async (id) => {
+  try {
+    const response = await axios.get(`${ARTICLES_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return mockedData.news.find((news) => news.id === id);
+  }
+});
+
 export const newsSlice = createSlice({
   name: 'news',
   initialState: {
     news: [],
+    article: null,
   },
   reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchNews.fulfilled, (state, action) => {
       state.news = action.payload;
+    });
+    builder.addCase(getArticle.fulfilled, (state, action) => {
+      state.article = action.payload;
     });
   },
 });

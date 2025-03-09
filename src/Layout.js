@@ -97,13 +97,9 @@ const Layout = () => {
             <BreadcrumbsContainer>
               <Breadcrumbs aria-label="breadcrumb">
                 <Link href="/nfl">NFL</Link>
-                <IconButton>
-                  <ArrowForward />
-                </IconButton>
+                <ArrowForward />
                 <Link href="/afc-south">AFC South</Link>
-                <IconButton>
-                  <ArrowForward />
-                </IconButton>
+                <ArrowForward />
                 <Typography>Tennessee</Typography>
               </Breadcrumbs>
             </BreadcrumbsContainer>

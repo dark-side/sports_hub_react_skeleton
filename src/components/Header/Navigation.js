@@ -123,7 +123,9 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Brand />  
+       <Link to="/" aria-label="Share with Facebook">
+         <Brand />
+       </Link>
 
       <SearchContainer>
         <Search className="search-icon" />
