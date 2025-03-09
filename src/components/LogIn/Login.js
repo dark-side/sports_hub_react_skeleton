@@ -116,7 +116,8 @@ const Login = () => {
         password: password
       }
     }).then(response => {
-      console.log('***********************login***************', response);
+      console.log('***********************signup***************', response);
+      localStorage.setItem('authToken', response.data.authentication_token);
       navigate('/');
     });
   };
