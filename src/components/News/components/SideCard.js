@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ThumbUp } from '@mui/icons-material';
 import {
   SideCardContainer,
@@ -23,13 +22,13 @@ const SideCard = ({ article }) => {
         </div>
         {article.short_description && <CardText>{article.short_description}</CardText>}
       </SideMain>
-        <CardAction>
-          <CardLike>Like us on Facebook</CardLike>
-          <CardLikeButton to="/like">
-            <ThumbUp aria-hidden="false" aria-label="Like" />
-            <span>Like</span>
-          </CardLikeButton>
-        </CardAction>
+      <CardAction>
+        <CardLike>Like us on Facebook</CardLike>
+        <CardLikeButton to="/like">
+          <ThumbUp aria-hidden="false" aria-label="Like" />
+          <span>Like</span>
+        </CardLikeButton>
+      </CardAction>
     </SideCardContainer>
   );
 };

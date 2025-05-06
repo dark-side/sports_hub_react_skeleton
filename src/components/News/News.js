@@ -16,7 +16,7 @@ import {
   Cards
 } from './styled/NewsStyles';
 
-const News = ({ articles, popular, commented, side }) => {
+const News = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
