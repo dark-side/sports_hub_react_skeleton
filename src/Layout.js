@@ -23,7 +23,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 100%;
-  padding: 0 2rem;
+  padding: 0;
   margin-top: 4rem;
 `;
 
@@ -52,7 +52,7 @@ const BreadcrumbsContainer = styled.div`
   line-height: 17px;
   margin-bottom: 20px;
   color: var(--text-gray);
-  margin-left: 252px; // Align with article content
+  margin-left: 240px;
 
   a {
     margin: 0 5px;
@@ -108,8 +108,8 @@ const Layout = () => {
               top: 'inherit',
               position: 'absolute',
               border: 'none',
-              paddingLeft: 0, // Remove left padding
-              boxShadow: 'none', // Remove any shadow
+              paddingLeft: 0,
+              boxShadow: 'none',
             },
           }}
         >
