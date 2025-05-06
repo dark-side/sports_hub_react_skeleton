@@ -9,15 +9,20 @@ import SideCard from './SideCard';
 
 const Container = styled.div`
   display: flex;
-  height: 100%;
-  flex: 1;
-  align-items: normal;
+  flex-direction: row;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px - 128px);
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 `;
 
 const Content = styled.div`
   width: 815px;
-  height: 100%;
+  min-width: 815px;
+  max-width: 815px;
   margin-bottom: 80px;
+  margin-left: 252px; /* Offset for sidenav, matches Angular */
 `;
 
 const Main = styled.div`
@@ -43,25 +48,18 @@ const Right = styled.div`
 `;
 
 const Side = styled.div`
-  width: calc(100% - 815px);
+  width: 285px;
+  min-width: 285px;
+  max-width: 285px;
   position: relative;
+  margin-left: 20px;
 `;
 
 const Cards = styled.div`
   width: 285px;
-  margin-top: 650px;
-  margin-left: 20px;
+  margin-top: 750px;
+  margin-left: 0;
   margin-bottom: 20px;
-`;
-
-const Watermark = styled.div`
-  position: absolute;
-  left: 60px;
-  top: 360px;
-  opacity: 0.1;
-  font-size: 100px;
-  transform: rotate(-45deg);
-  pointer-events: none;
 `;
 
 const News = ({ articles, popular, commented, side }) => {
@@ -117,7 +115,7 @@ const News = ({ articles, popular, commented, side }) => {
             <SideCard key={index} article={article} />
           ))}
         </Cards>
-        <Watermark>NEWS</Watermark>
+        <div className="watermark watermark-1">NEWS</div>
       </Side>
     </Container>
   );

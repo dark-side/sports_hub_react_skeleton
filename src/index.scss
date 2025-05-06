@@ -59,7 +59,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .watermark {
-    font-family: "Roboto Condensed";
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 141px;
     line-height: 192px;
     font-weight: 700;
@@ -68,4 +68,17 @@ p, h1, h2, h3, h4, h5, h6 {
     writing-mode: vertical-rl;
     position: absolute;
     user-select: none;
-  }
+    z-index: 25;
+}
+
+.watermark-1 {
+  left: 60px;
+  top: 160px;
+  z-index: 125;
+}
+
+.watermark-2 {
+  left: 60px;
+  top: 360px;
+  z-index: 125;
+}

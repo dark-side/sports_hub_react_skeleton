@@ -1,18 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Google, YouTube } from '@mui/icons-material';
 import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
   display: block;
+  background: #fff;
+  min-width: 240px;
+  max-width: 240px;
+  height: 100%;
+  box-shadow: 0px 2px 24px 0px #0000001C;
+  /* border-right: 1px solid var(--gray-two); */
+  margin: 0;
+  padding: 0;
 `;
 
 const NavigationContainer = styled.div`
-  margin: 4rem 0;
+  margin-top: 3.5rem; // more spacing from the top
+  margin-bottom: 4rem;
 `;
 
 const FollowContainer = styled.div`
   width: 76px;
   height: 92px;
+  margin-top: 2rem;
+  margin-left: 28px; // align with nav items
 `;
 
 const FollowTitle = styled.div`
@@ -27,91 +39,100 @@ const FollowTitle = styled.div`
 const FollowGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-`;
+  gap: 0 10px;
 
-const FollowLink = styled.a`
-  margin-bottom: 15px;
+  a {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // align icons to left edge
+    justify-self: start;
+  }
+
+  a[aria-label*="Google"] svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const NavigationList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
 `;
 
-const NavigationItem = styled.li`
+const NavigationItem = styled(Link)`
   cursor: pointer;
   color: var(--text-gray);
-  font-size: 0.875rem;
-  font-weight: bold;
-`;
-
-const NavigationLink = styled.a`
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
   text-transform: uppercase;
+  padding: 8px 0 8px 28px; // more left padding
+  border-radius: 4px;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+
+  &:hover {
+    background: var(--gray-light);
+    color: var(--primary-red);
+  }
 `;
 
-const SIDEBAR_ITEMS = [
-    'HOME',
-    'NBA',
-    'NFL',
-    'MLB',
-    'NHL',
-    'CBB',
-    'CFB',
-    'NASCAR',
-    'GOLF',
-    'SOCCER',
-    'Team Hub',
-    'LIFESTYLE',
-    'DEALBOOK',
-    'VIDEO'
-  ];
-
-const Navigation = ({ menuItems }) => {
-  return (
-    <NavigationContainer>
-      <NavigationList>
-        {SIDEBAR_ITEMS.map((navLink, index) => (
-          <NavigationItem key={index}>
-            <NavigationLink href={`/${navLink.toLowerCase()}`}>
-              {navLink}
-            </NavigationLink>
-          </NavigationItem>
-        ))}
-      </NavigationList>
-    </NavigationContainer>
-  );
-};
-
-const Follow = () => {
-  return (
-    <FollowContainer>
-      <FollowTitle>Follow</FollowTitle>
-      <FollowGrid>
-        <FollowLink href="https://www.facebook.com" aria-label="Follow us on Facebook">
-          <Facebook fontSize="large" />
-        </FollowLink>
-        <FollowLink href="https://www.twitter.com" aria-label="Follow us on Twitter">
-          <Twitter fontSize="large" />
-        </FollowLink>
-        <FollowLink href="https://www.google.com" aria-label="Follow us on Google">
-          <Google fontSize="large" />
-        </FollowLink>
-        <FollowLink href="https://www.youtube.com" aria-label="Follow us on YouTube">
-          <YouTube fontSize="large" />
-        </FollowLink>
-      </FollowGrid>
-    </FollowContainer>
-  );
-};
-
-const Sidebar = ({ menuItems }) => {
+const SideNavigation = ({ menuItems = [
+  'HOME',
+  'NBA',
+  'NFL',
+  'MLB',
+  'NHL',
+  'CBB',
+  'CFB',
+  'NASCAR',
+  'GOLF',
+  'SOCCER',
+  'Team Hub',
+  'LIFESTYLE',
+  'DEALBOOK',
+  'VIDEO'
+] }) => {
   return (
     <SidebarContainer>
-      <Navigation menuItems={menuItems} />
-      <Follow />
+      <NavigationContainer className="navigation">
+        <NavigationList className="flex flex-col gap-4">
+          {menuItems.map((navLink, index) => (
+            <li key={index} className="cursor-pointer text-[var(--text-gray)] text-sm font-bold">
+              <NavigationItem to={`/${navLink.toLowerCase()}`}>
+                {navLink.toUpperCase()}
+              </NavigationItem>
+            </li>
+          ))}
+        </NavigationList>
+      </NavigationContainer>
+
+      <FollowContainer className="follow">
+        <FollowTitle className="title">Follow</FollowTitle>
+        <FollowGrid className="grid">
+          <Link to="/follow-facebook" aria-label="Follow us on Facebook">
+            <Facebook />
+          </Link>
+          <Link to="/follow-twitter" aria-label="Follow us on Twitter">
+            <Twitter />
+          </Link>
+          <Link to="/follow-google" aria-label="Follow us on Google">
+            <Google style={{ width: '20px', height: '20px' }} />
+          </Link>
+          <Link to="/follow-youtube" aria-label="Follow us on YouTube">
+            <YouTube />
+          </Link>
+        </FollowGrid>
+      </FollowContainer>
     </SidebarContainer>
   );
 };
 
-export default Sidebar;
+export default SideNavigation;

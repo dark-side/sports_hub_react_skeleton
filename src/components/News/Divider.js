@@ -22,7 +22,7 @@ const DividerLine = styled.div`
   flex: 1;
 `;
 
-const YourComponent = ({ title }) => {
+const SmallDivider = ({ title }) => {
   return (
     <Title>
       <Name>{title}</Name>
@@ -31,4 +31,4 @@ const YourComponent = ({ title }) => {
   );
 };
 
-export default YourComponent;
+export default SmallDivider;
