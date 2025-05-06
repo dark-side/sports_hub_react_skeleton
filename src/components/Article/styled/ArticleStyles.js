@@ -1,9 +1,7 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Share as ShareIcon } from '@mui/icons-material';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const ArticleContainer = styled.div`
+export const ArticleContainer = styled.div`
   height: 460px;
   width: 1060px;
   margin-bottom: 40px;
@@ -11,12 +9,12 @@ const ArticleContainer = styled.div`
   display: block;
 `;
 
-const Photo = styled.img`
+export const Photo = styled.img`
   width: 815px;
   height: 455px;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
   width: 420px;
@@ -29,7 +27,7 @@ const Info = styled.div`
   z-index: 100;
 `;
 
-const Publish = styled.div`
+export const Publish = styled.div`
   font-family: "Roboto";
   font-size: 14px;
   line-height: 17px;
@@ -37,7 +35,7 @@ const Publish = styled.div`
   color: var(--text-dark-gray);
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
@@ -46,7 +44,7 @@ const Title = styled.div`
   color: var(--red);
 `;
 
-const Body = styled.div`
+export const Body = styled.div`
   font-family: "Open Sans";
   font-size: 22px;
   font-weight: 700;
@@ -54,7 +52,7 @@ const Body = styled.div`
   color: var(--black-two);
 `;
 
-const More = styled(Link)`
+export const More = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +69,7 @@ const More = styled(Link)`
   text-decoration: none;
 `;
 
-const Share = styled(Link)`
+export const Share = styled(Link)`
   display: flex;
   align-items: center;
   height: 42px;
@@ -86,37 +84,3 @@ const Share = styled(Link)`
     margin-right: 10px;
   }
 `;
-
-const Article = ({ article }) => {
-  const location = useLocation();
-
-  if (!article) {
-    return null;
-  }
-
-  const formattedDate = new Date(article.created_at).toLocaleDateString('en-GB');
-
-  return (
-    <ArticleContainer>
-      <Photo src={article.image_url} alt="Main article" />
-      <Info>
-        <Publish>Published / {formattedDate}</Publish>
-        <Title>{article.title}</Title>
-        <Body>{article.short_description}</Body>
-
-        {location.pathname.includes('article') ? (
-          <Share to="/share">
-            <ShareIcon aria-hidden="false" aria-label="Share" />
-            <span>Share</span>
-          </Share>
-        ) : (
-          <More to={`/article/1`}>
-            More
-          </More>
-        )}
-      </Info>
-    </ArticleContainer>
-  );
-};
-
-export default Article;

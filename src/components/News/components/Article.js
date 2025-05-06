@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Share as ShareIcon } from '@mui/icons-material';
-import { useSelector, useDispatch } from 'react-redux';
-import { getArticle } from '../../app/slices/newsSlice';
 import {
   ArticleContainer,
   Photo,
@@ -12,24 +10,15 @@ import {
   Body,
   More,
   Share
-} from './styled/ArticleStyles';
+} from '../styled/NewsArticleStyles';
 
-const Article = () => {
-    const location = useLocation();
-    const dispatch = useDispatch();
-  
-    useEffect(() => {
-        const id = location.pathname.split('/').pop();
-      dispatch(getArticle(id));
-    }, [dispatch]);
+const Article = ({ article }) => {
+  const location = useLocation();
 
-    let article = useSelector((state) => state.news.article);
+  if (!article) {
+    return null;
+  }
 
-    if (!article) {
-        return null;
-    }
-
-  
   const formattedDate = new Date(article.created_at).toLocaleDateString('en-GB');
 
   return (
@@ -40,10 +29,16 @@ const Article = () => {
         <Title>{article.title}</Title>
         <Body>{article.short_description}</Body>
 
-        <Share to="/share">
+        {location.pathname.includes('article') ? (
+          <Share to="/share">
             <ShareIcon aria-hidden="false" aria-label="Share" />
             <span>Share</span>
           </Share>
+        ) : (
+          <More to={`/article/1`}>
+            More
+          </More>
+        )}
       </Info>
     </ArticleContainer>
   );

@@ -1,22 +1,20 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ThumbUp } from '@mui/icons-material';
 
-const SideCardContainer = styled.div`
+export const SideCardContainer = styled.div`
   display: block;
   &.space {
     margin-top: 40px;
   }
 `;
 
-const SideMain = styled(Link)`
+export const SideMain = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const CardTitle = styled.div`
+export const CardTitle = styled.div`
   position: relative;
   top: 17px;
   display: flex;
@@ -32,7 +30,7 @@ const CardTitle = styled.div`
   line-height: 19px;
 `;
 
-const CardText = styled.div`
+export const CardText = styled.div`
   font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
@@ -43,7 +41,7 @@ const CardText = styled.div`
   padding: 12px;
 `;
 
-const CardAction = styled.div`
+export const CardAction = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,7 +49,7 @@ const CardAction = styled.div`
   margin-top: 15px;
 `;
 
-const CardLike = styled.div`
+export const CardLike = styled.div`
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 400;
@@ -59,7 +57,7 @@ const CardLike = styled.div`
   color: var(--gray-three);
 `;
 
-const CardLikeButton = styled(Link)`
+export const CardLikeButton = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,28 +76,3 @@ const CardLikeButton = styled(Link)`
     margin-right: 5px;
   }
 `;
-
-const SideCard = ({ article }) => {
-  if (!article) return null;
-
-  return (
-    <SideCardContainer className={!article.title ? 'space' : ''}>
-      <SideMain to={article.id}>
-        <div>
-          {article.title && <CardTitle>{article.title}</CardTitle>}
-          <img src={article.image_url} alt="Facebook" />
-        </div>
-        {article.short_description && <CardText>{article.short_description}</CardText>}
-      </SideMain>
-        <CardAction>
-          <CardLike>Like us on Facebook</CardLike>
-          <CardLikeButton to="/like">
-            <ThumbUp aria-hidden="false" aria-label="Like" />
-            <span>Like</span>
-          </CardLikeButton>
-        </CardAction>
-    </SideCardContainer>
-  );
-};
-
-export default SideCard;

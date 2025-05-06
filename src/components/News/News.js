@@ -1,66 +1,20 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import Card from './Card';
-import Divider from './Divider';
+import Card from './components/Card';
+import Divider from './components/Divider';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchNews } from '../../app/slices/newsSlice';
-import Article from './Article';
-import SideCard from './SideCard';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  min-height: calc(100vh - 80px - 128px);
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-`;
-
-const Content = styled.div`
-  width: 815px;
-  min-width: 815px;
-  max-width: 815px;
-  margin-bottom: 80px;
-  margin-left: 252px; /* Offset for sidenav, matches Angular */
-`;
-
-const Main = styled.div`
-  width: 100%;
-  margin-bottom: 120px;
-`;
-
-const Bottom = styled.div`
-  display: flex;
-  width: 100%;
-  background-color: white;
-`;
-
-const Left = styled.div`
-  height: 100%;
-  flex-grow: 1;
-  margin-right: 20px;
-`;
-
-const Right = styled.div`
-  height: 100%;
-  flex-grow: 1;
-`;
-
-const Side = styled.div`
-  width: 285px;
-  min-width: 285px;
-  max-width: 285px;
-  position: relative;
-  margin-left: 20px;
-`;
-
-const Cards = styled.div`
-  width: 285px;
-  margin-top: 750px;
-  margin-left: 0;
-  margin-bottom: 20px;
-`;
+import Article from './components/Article';
+import SideCard from './components/SideCard';
+import {
+  Container,
+  Content,
+  Main,
+  Bottom,
+  Left,
+  Right,
+  Side,
+  Cards
+} from './styled/NewsStyles';
 
 const News = ({ articles, popular, commented, side }) => {
   const dispatch = useDispatch();
