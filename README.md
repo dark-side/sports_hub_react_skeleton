@@ -2,12 +2,21 @@
 
 ## Project Description
 
-This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a React.js playground. For now, we only have the Ruby on Rails application as a Back-End, but we plan to extend it to other technologies in the future. This application can be started with a `docker compose` using the Ruby on Rails Back-End application mentioned.
+This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a React.js playground.
 
 The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
 
 ## Available Back-End applications
-- [Ruby on Rails](https://github.com/rtriska/ruby_be_genai_plgrnd)
+- [Ruby on Rails](https://github.com/dark-side/sports_hub_ruby_skeleton),
+- [PHP](https://github.com/dark-side/sports_hub_php_skeleton),
+- [Node.js](https://github.com/dark-side/sports_hub_nodejs_skeleton),
+- [Java](https://github.com/dark-side/sports_hub_java_skeleton),
+- [.Net](https://github.com/dark-side/sports_hub_net_skeleton),
+- [C++](https://github.com/dark-side/sports_hub_cpp_skeleton),
+- [Go](https://github.com/dark-side/sports_hub_go_skeleton),
+- [Python](https://github.com/dark-side/sports_hub_python_skeleton)
+
+This application can be started with a `docker compose` using the Back-End applications mentioned.
 
 ## Available Scripts
 
