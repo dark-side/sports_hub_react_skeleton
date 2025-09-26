@@ -16,7 +16,9 @@ The application's legend is based on the sports-hub application description from
 - [Go](https://github.com/dark-side/sports_hub_go_skeleton),
 - [Python](https://github.com/dark-side/sports_hub_python_skeleton)
 
-This application can be started with a `docker compose` using the Back-End applications mentioned.
+This application can be started with a `docker compose` using the Back-End applications mentioned.  
+Docker Compose can be installed using the official documentation [here](https://docs.docker.com/compose/install/).
+Read more about alternatives to Docker [here](https://github.com/dark-side/sports_hub_angular_skeleton/blob/main/READMORE_DockerAlternatives.md).
 
 ## Available Scripts
 
